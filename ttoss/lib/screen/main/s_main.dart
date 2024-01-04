@@ -28,6 +28,8 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
 
   static double get bottomNavigationBarBorderRadius => 30.0;
 
+  static const double bottonNavigatorHeight = 50;
+
   @override
   FutureOr<void> afterFirstLayout(BuildContext context) {
     delay(() {
