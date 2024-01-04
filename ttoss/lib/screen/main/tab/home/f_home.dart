@@ -20,7 +20,11 @@ class HomeFragment extends StatelessWidget {
       child: const Stack(
         children: [
           SingleChildScrollView(
-            child: Column(),
+            child: Column(
+              children: [
+
+              ],
+            ),
           ),
           TtossAppBar()
         ],
