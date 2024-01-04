@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Tap extends StatelessWidget {
-  final void Function() onTap;
+  final VoidCallback? onTap;
   final void Function()? onLongPress;
   final Widget child;
 

@@ -1,9 +1,11 @@
 import 'package:fast_app_base/common/common.dart';
+import 'package:fast_app_base/screen/notification/s_notification.dart';
 import 'package:flutter/material.dart';
 
 class TtossAppBar extends StatefulWidget {
   // 여러곳에서 쓰이는 상수를 핵심적인 한 곳에 적어두어 유지보수성을 향상
   static const double appBarHeight = 60;
+
   const TtossAppBar({super.key});
 
   @override
@@ -11,7 +13,7 @@ class TtossAppBar extends StatefulWidget {
 }
 
 class _TtossAppBarState extends State<TtossAppBar> {
-  bool _showRedDot = false;
+  final bool _showRedDot = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +28,9 @@ class _TtossAppBarState extends State<TtossAppBar> {
             Image.asset("$basePath/icon/map_point.png", height: 30),
             width10,
             InkWell(
-              onTap:(){
-                setState(() {
-                  _showRedDot = !_showRedDot;
-                });
+              onTap: () {
+                // 알림 화면으로 이동
+                Nav.push(const NotificationScreen());
               },
               child: Stack(
                 children: [

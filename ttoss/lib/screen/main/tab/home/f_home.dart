@@ -36,6 +36,7 @@ class HomeFragment extends StatelessWidget {
                   bottom: MainScreenState.bottonNavigatorHeight),
               child: Column(
                 children: [
+                  height10,
                   BigButton(
                     "토스뱅크",
                     onTap: () => context.showSnackbar("토스뱅크를 눌렀어요."),
