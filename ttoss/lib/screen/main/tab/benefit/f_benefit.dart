@@ -1,3 +1,4 @@
+import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
 import 'package:fast_app_base/screen/main/tab/benefit/benefits_dummy.dart';
 import 'package:fast_app_base/screen/main/tab/benefit/w_benefit_item.dart';
@@ -20,7 +21,7 @@ class _BenefitFragmentState extends State<BenefitFragment> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: context.appColors.mainDarkBackground,
       child: RefreshIndicator(
         edgeOffset: TtossAppBar.appBarHeight,
         onRefresh: () async {

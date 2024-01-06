@@ -20,7 +20,7 @@ class HomeFragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: context.appColors.mainDarkBackground,
       child: Stack(
         children: [
           RefreshIndicator(
