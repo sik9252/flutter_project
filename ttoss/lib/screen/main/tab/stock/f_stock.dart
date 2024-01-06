@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../../common/widget/w_image_button.dart';
 import '../../s_main.dart';
 import '../home/w_ttos_app_bar.dart';
+import 'search/s_search_stock.dart';
 import 'tab/f_my_stock.dart';
 import 'tab/f_today_discovery.dart';
 
@@ -49,7 +50,7 @@ class _StockFragmentState extends State<StockFragment> with SingleTickerProvider
               actions: [
                 ImageButton(
                   imagePath: '$basePath/icon/stock_search.png',
-                  onTap: () => context.showSnackbar('검색'),
+                  onTap: () => Nav.push(const SearchStockScreen())
                 ),
                 ImageButton(
                   imagePath: '$basePath/icon/stock_calendar.png',
