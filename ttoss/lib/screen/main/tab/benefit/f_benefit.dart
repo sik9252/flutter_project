@@ -29,8 +29,7 @@ class _BenefitFragmentState extends State<BenefitFragment> {
         },
         child: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
-          padding: const EdgeInsets.only(
-              bottom: MainScreenState.bottonNavigatorHeight),
+          padding: const EdgeInsets.only(bottom: MainScreenState.bottonNavigatorHeight),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -40,8 +39,7 @@ class _BenefitFragmentState extends State<BenefitFragment> {
               const PointButtonWidget(point: 1569),
               height20,
               "혜택 더 받기".text.white.bold.size(16).make(),
-              ...benefitList
-                  .map((benefit) => BenefitItemWidget(benefit: benefit))
+              ...benefitList.map((benefit) => BenefitItemWidget(benefit: benefit))
             ],
           ).pSymmetric(h: 20),
         ),
