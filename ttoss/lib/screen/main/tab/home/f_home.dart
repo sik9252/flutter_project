@@ -33,8 +33,7 @@ class HomeFragment extends StatelessWidget {
               // 화면이 꽉 차지 않아도 언제나 스크롤할 수 있도록 추가
               physics: const AlwaysScrollableScrollPhysics(),
               padding: const EdgeInsets.only(
-                  top: TtossAppBar.appBarHeight,
-                  bottom: MainScreenState.bottonNavigatorHeight),
+                  top: TtossAppBar.appBarHeight, bottom: MainScreenState.bottonNavigatorHeight),
               child: Column(
                 children: [
                   height10,
@@ -49,15 +48,13 @@ class HomeFragment extends StatelessWidget {
                       children: [
                         "자산".text.bold.white.make(),
                         height5,
-                        ...bankAccounts
-                            .map((account) => BankAccountWidget(account))
-                            .toList(),
+                        ...bankAccounts.map((account) => BankAccountWidget(account)).toList(),
                       ],
                     ),
                   )
                 ],
               ).pSymmetric(h: 20),
-            ).animate().slideY(duration: 1000.ms),
+            ),
           ),
           const TtossAppBar()
         ],
@@ -71,13 +68,7 @@ class HomeFragment extends StatelessWidget {
           onTap: () {
             context.showErrorSnackbar('error');
           },
-          child: '에러 보여주기 버튼'
-              .text
-              .white
-              .size(13)
-              .make()
-              .centered()
-              .pSymmetric(h: 10, v: 5),
+          child: '에러 보여주기 버튼'.text.white.size(13).make().centered().pSymmetric(h: 10, v: 5),
         ));
   }
 

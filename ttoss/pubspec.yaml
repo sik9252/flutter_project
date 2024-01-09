@@ -75,6 +75,7 @@ dependencies:
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.0
   timeago: ^3.6.0
+  animations: ^2.0.11
 
 dev_dependencies:
   flutter_test:
