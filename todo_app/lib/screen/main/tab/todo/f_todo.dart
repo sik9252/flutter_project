@@ -23,7 +23,7 @@ class _TodoFragmentState extends State<TodoFragment> {
                   onPressed: () => Scaffold.of(context).openDrawer(), icon: const Icon(Icons.menu)),
             ],
           ),
-          Expanded(child: const TodoList().pSymmetric(h: 15))
+          Expanded(child: TodoList().pSymmetric(h: 15))
         ],
       ),
     );

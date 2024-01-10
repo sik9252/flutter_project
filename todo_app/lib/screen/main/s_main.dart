@@ -1,10 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:fast_app_base/common/dart/extension/datetime_extension.dart';
-import 'package:fast_app_base/common/data/memory/vo/todo_data_holder.dart';
-import 'package:fast_app_base/common/data/memory/vo/vo_todo.dart';
 import 'package:fast_app_base/screen/main/tab/tab_item.dart';
 import 'package:fast_app_base/screen/main/tab/tab_navigator.dart';
-import 'package:fast_app_base/screen/main/write/d_write_todo.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../common/common.dart';
@@ -17,7 +14,8 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => MainScreenState();
 }
 
-class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMixin {
+class MainScreenState extends State<MainScreen>
+    with SingleTickerProviderStateMixin, TodoDataProvider {
   TabItem _currentTab = TabItem.todo;
   final tabs = [TabItem.todo, TabItem.search];
   final List<GlobalKey<NavigatorState>> navigatorKeys = [];
@@ -53,16 +51,19 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () async{
-            final result = await WriteTodoDialog().show();
-            if(result != null && mounted) { // mounted를 이용해서 현재 스크린이 살아있는지 체크
-              context.holder.notifier.addTodo(Todo(
-                id: DateTime.now().millisecondsSinceEpoch,
-                title: result.text,
-                dueDate: result.dateTime
-              ));
-            }
+          onPressed: () async {
+            todoData.addTodo();
           },
+          // onPressed: () async {
+          //   final result = await WriteTodoDialog().show();
+          //   if (result != null && mounted) {
+          //     // mounted를 이용해서 현재 스크린이 살아있는지 체크
+          //     context.holder.notifier.addTodo(Todo(
+          //         id: DateTime.now().millisecondsSinceEpoch,
+          //         title: result.text,
+          //         dueDate: result.dateTime));
+          //   }
+          // },
           child: const Icon(EvaIcons.plus),
         ),
         bottomNavigationBar: _buildBottomNavigationBar(context),
