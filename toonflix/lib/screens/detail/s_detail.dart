@@ -32,7 +32,11 @@ class _DetailScreenState extends State<DetailScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text(widget.webtoon.title),
+        iconTheme: const IconThemeData(color: Colors.white),
+        title: Text(
+          widget.webtoon.title,
+          style: const TextStyle(color: Colors.white),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -63,7 +67,10 @@ class _DetailScreenState extends State<DetailScreen> {
                   if (snapshot.hasData) {
                     // ListView, ListView.builder는 내가 리스트의 길이를 모르거나 리스트 길이가 엄청 길때 최적화 필요할때
                     return Column(
-                      children: [for (var episode in snapshot.data!) EpisodeItem(episode: episode)],
+                      children: [
+                        for (var episode in snapshot.data!)
+                          EpisodeItem(episode: episode, webtoonId: widget.webtoon.id),
+                      ],
                     );
                   }
                   return Container();

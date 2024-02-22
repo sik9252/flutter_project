@@ -13,7 +13,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: const Text("오늘의 웹툰"),
+        title: const Text(
+          "오늘의 웹툰",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: FutureBuilder(
         future: webtoons,
